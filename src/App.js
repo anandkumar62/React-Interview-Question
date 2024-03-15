@@ -11,6 +11,7 @@ import LightDarkMode from './components/light-dark-mode/LightDarkMode';
 import SimpleTheme from './components/light-dark-mode/SimpleTheme';
 import ScrollIndicator from './components/scroll-indicator/ScrollIndicator';
 import ToDolist from './components/to-do-list/ToDolist';
+import GItHubSearch from './components/github-search/GItHubSearch';
 
 
 function App() {
@@ -40,7 +41,9 @@ function App() {
 
       {/* <ScrollIndicator url={'https://dummyjson.com/products?limit=100'}/> */}
 
-      <ToDolist />
+      {/* <ToDolist /> */}
+
+      <GItHubSearch />
     </>
   );
 }
