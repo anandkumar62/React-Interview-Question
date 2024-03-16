@@ -12,6 +12,7 @@ import SimpleTheme from './components/light-dark-mode/SimpleTheme';
 import ScrollIndicator from './components/scroll-indicator/ScrollIndicator';
 import ToDolist from './components/to-do-list/ToDolist';
 import GItHubSearch from './components/github-search/GItHubSearch';
+import SearchAutoComplete from './components/search-autocompleate-with-api/SearchAutoComplete';
 
 
 function App() {
@@ -43,7 +44,9 @@ function App() {
 
       {/* <ToDolist /> */}
 
-      <GItHubSearch />
+      {/* <GItHubSearch /> */}
+
+      {/* <SearchAutoComplete /> */}
     </>
   );
 }
