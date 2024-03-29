@@ -14,6 +14,7 @@ import ToDolist from './components/to-do-list/ToDolist';
 import GItHubSearch from './components/github-search/GItHubSearch';
 import SearchAutoComplete from './components/search-autocompleate-with-api/SearchAutoComplete';
 import WeatherApp from './components/weather-app/WeatherApp';
+import AfterSubmit from './components/after-submit/AfterSubmit';
 
 
 function App() {
@@ -49,7 +50,9 @@ function App() {
 
       {/* <SearchAutoComplete /> */}
 
-      <WeatherApp />
+      {/* <WeatherApp /> */}
+
+      <AfterSubmit />
     </>
   );
 }
