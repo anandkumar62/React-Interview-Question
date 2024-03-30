@@ -45,9 +45,9 @@ function StarRating() {
   };
   
   return (
-    <div className=" flex justify-center items-center h-screen bg-blue-500">
+    <div className=" flex justify-center items-center font-bold h-screen bg-blue-500">
       {[...Array(5)].map((_, index) => (
-        <svg
+        <div
         key={index}
         onClick={() => handleClick(index + 1)}
         onMouseEnter={() => handleMouseEnter(index + 1)}
@@ -58,9 +58,9 @@ function StarRating() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 2L9.31 8.19 3.1 9.29 7.46 14.1 6.36 20 12 17.77 17.64 20l-1.1-5.9L20.9 9.29 14.69 8.19z" />
-        </svg>
+          ❁
+          {/* ॐ */}
+        </div>
       ))}
       <p className="ml-2">{hoverRating || rating}/5</p>
     </div>

@@ -21,39 +21,39 @@ import Stepper from './components/step-out-stepper/Stepper';
 function App() {
   return (
     <>
-      {/* <Accordian /> */}
+      <Accordian />
 
-      {/* <RandomColor /> */}
+      <RandomColor />
 
-      {/* <StarRating /> */}
+      <StarRating />
 
-      {/* <ImageSlider url={"https://picsum.photos/v2/list"} page={"10"} limit={"10"} /> */}
+      <ImageSlider url={"https://picsum.photos/v2/list"} page={"10"} limit={"10"} />
       
-      {/* <LoadMoreData /> */}
+      <LoadMoreData />
 
-      {/* <TreeNode data={Data}/> */}
+      <TreeNode data={Data}/>
 
-      {/* <QrCodeGenerator /> */}
+      <QrCodeGenerator />
 
-      {/* <CheackoutStepper /> */}
+      <CheackoutStepper />
       
       {/* By using costom hooks */}
-      {/* <LightDarkMode />  */}
+      <LightDarkMode /> 
       
       {/* Simple nothing extra */}
-      {/* <SimpleTheme /> */}
+      <SimpleTheme />
 
-      {/* <ScrollIndicator url={'https://dummyjson.com/products?limit=100'}/> */}
+      <ScrollIndicator url={'https://dummyjson.com/products?limit=100'}/>
 
-      {/* <ToDolist /> */}
+      <ToDolist />
 
-      {/* <GItHubSearch /> */}
+      <GItHubSearch />
 
-      {/* <SearchAutoComplete /> */}
+      <SearchAutoComplete />
 
-      {/* <WeatherApp /> */}
+      <WeatherApp />
 
-      {/* <AfterSubmit /> */}
+      <AfterSubmit />
 
       <Stepper />
     </>
