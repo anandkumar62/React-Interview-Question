@@ -15,6 +15,7 @@ import GItHubSearch from './components/github-search/GItHubSearch';
 import SearchAutoComplete from './components/search-autocompleate-with-api/SearchAutoComplete';
 import WeatherApp from './components/weather-app/WeatherApp';
 import AfterSubmit from './components/after-submit/AfterSubmit';
+import Stepper from './components/step-out-stepper/Stepper';
 
 
 function App() {
@@ -52,7 +53,9 @@ function App() {
 
       {/* <WeatherApp /> */}
 
-      <AfterSubmit />
+      {/* <AfterSubmit /> */}
+
+      <Stepper />
     </>
   );
 }
