@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Weather = () => {
   const [location, setLocation] = useState('');
   const [weather, setWeather] = useState(null);
+  const [error, setError] = useState(null);
 
   const fetchData = async () => {
     try {
@@ -10,16 +11,27 @@ const Weather = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=1fa9ff4126d95b8db54f3897a208e91c`
       );
       const data = await response.json();
-      setWeather(data);
-      console.log(data);
+
+      if (data.cod && data.cod !== 200) {
+        setError('Location not found');
+        setWeather(null);
+        console.log(data.cod);
+      } else {
+        setWeather(data);
+        console.log(data);
+        setError(null);
+      }
     } catch (error) {
       console.error('Error fetching data:', error);
+      setError('Error fetching data');
+      setWeather(null);
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchData();
+    setLocation(" ");
   };
 
   return (
@@ -39,19 +51,26 @@ const Weather = () => {
           Get Weather
         </button>
       </form>
-      {weather && (
-        <div className='capitalize flex flex-col justify-center items-center'>
+
+      {error && <div className="text-red-500 font-bold">This {error} or incorrect spelling</div>}
+
+      {weather && weather.name ? (
+        <div>
+          <div className='capitalize flex flex-col justify-center items-center'>
             <img
-            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-            alt="Weather Icon"
-          />
-          <h1 className="text-4xl font-semibold mb-4">{weather.name}</h1>
-          <div className="text-2xl">{Math.round(weather.main.temp - 273.15)}°C</div>
-          <div className="text-lg">{weather.weather[0].description}</div>
-          <div className="text-lg">Humidity: {weather.main.humidity}%</div>
-          <div className="text-lg">Sun rise: {weather.sys.sunrise}%</div>
-          <div className="text-lg">sun set: {weather.sys.sunset}%</div>
+              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+              alt="Weather Icon"
+            />
+            <h1 className="text-4xl font-semibold mb-4">{weather.name}</h1>
+            <div className="text-2xl">{Math.round(weather.main.temp - 273.15)}°C</div>
+            <div className="text-lg">{weather.weather[0].description}</div>
+            <div className="text-lg">Humidity: {weather.main.humidity}%</div>
+            <div className="text-lg">Sun rise: {weather.sys.sunrise}%</div>
+            <div className="text-lg">sun set: {weather.sys.sunset}%</div>
+          </div>
         </div>
+      ) : (
+        <div>No weather</div>
       )}
     </div>
   );
