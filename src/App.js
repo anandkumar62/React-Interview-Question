@@ -16,6 +16,7 @@ import SearchAutoComplete from './components/search-autocompleate-with-api/Searc
 import WeatherApp from './components/weather-app/WeatherApp';
 import AfterSubmit from './components/after-submit/AfterSubmit';
 import Stepper from './components/step-out-stepper/Stepper';
+import SelectableGrid from './components/selectable-grid/SelectableGrid';
 
 
 function App() {
@@ -56,6 +57,9 @@ function App() {
       <AfterSubmit />
 
       <Stepper />
+      
+      <SelectableGrid />
+
     </>
   );
 }
